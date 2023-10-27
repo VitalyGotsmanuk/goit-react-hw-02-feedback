@@ -1,35 +1,46 @@
-import user from '../data/user.json';
-import { Profile } from './Profile/Profile';
-import data from '../data/data.json';
-import { Statistics } from './Statistics/Statistics';
-import friends from '../data/friends.json';
-import { FriendList } from './FriendList/FriendList';
-import transactions from '../data/transactions.json';
-import { TransactionHistory } from './TransactionHistory/TransactionHistory';
-
 import '../index.css';
+import { Component } from 'react';
 
-export const App = () => {
-  return (
-    <section>
-    {/* <h1>1-st HW!</h1> */}
+import { Feedback } from './Feedback/Feedback';
+
+export class App extends Component {
+
+  state = {
+        good: 0,
+        neutral: 0,
+        bad: 0
+    };
     
-    <Profile
-      username={user.username}
-      tag={user.tag}
-      location={user.location}
-      avatar={user.avatar}
-      stats={user.stats}
-    />
-        
-    <Statistics title="Upload stats" stats={data} />
-      
-    <Statistics stats={data} />
-    
-    <FriendList friends={friends} /> 
-    
-    <TransactionHistory items={transactions} />
-             
-    </section> 
-  );
-};
+
+    handleGood = event => { 
+        //console.log("Good", event)
+        this.setState({ good: this.state.good + 1 });
+
+        // console.log("Good", this.state.good)     
+    };
+
+    handleNeutral = event => { 
+        //console.log("Neutral", event)
+        this.setState({ neutral: this.state.neutral + 1 });
+    };
+
+    handleBad = event => { 
+        //console.log("Bad")
+        this.setState({ bad: this.state.bad + 1 }); 
+    };
+
+  render() {
+    return (
+      <>
+        <h1>2-nd feedback HW! 👍</h1>
+               
+        <Feedback
+          state = {this.state}
+          handleGood={this.handleGood}
+          handleNeutral ={this.handleNeutral}
+          handleBad = {this.handleBad}
+        />   
+      </>
+    );
+  };
+}
