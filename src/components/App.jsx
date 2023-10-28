@@ -11,23 +11,30 @@ export class App extends Component {
         bad: 0
     };
     
+  handleOption = (option) => {
+    this.setState((prevState) => {
+      return {
+        [option]: prevState[option] +1,
+      }
+    })
+  };
 
-    handleGood = event => { 
-        //console.log("Good", event)
-        this.setState({ good: this.state.good + 1 });
+    // handleGood = event => { 
+    //     //console.log("Good", event)
+    //     this.setState({ good: this.state.good + 1 });
 
-        // console.log("Good", this.state.good)     
-    };
+    //     // console.log("Good", this.state.good)     
+    // };
 
-    handleNeutral = event => { 
-        //console.log("Neutral", event)
-        this.setState({ neutral: this.state.neutral + 1 });
-    };
+    // handleNeutral = event => { 
+    //     //console.log("Neutral", event)
+    //     this.setState({ neutral: this.state.neutral + 1 });
+    // };
 
-    handleBad = event => { 
-        //console.log("Bad")
-        this.setState({ bad: this.state.bad + 1 }); 
-    };
+    // handleBad = event => { 
+    //     //console.log("Bad")
+    //     this.setState({ bad: this.state.bad + 1 }); 
+    // };
 
   render() {
     return (
@@ -36,9 +43,8 @@ export class App extends Component {
                
         <Feedback
           state = {this.state}
-          handleGood={this.handleGood}
-          handleNeutral ={this.handleNeutral}
-          handleBad = {this.handleBad}
+          handleOption={this.handleOption}
+          
         />   
       </>
     );
