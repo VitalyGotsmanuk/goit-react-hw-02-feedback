@@ -5,19 +5,34 @@ import { Feedback } from './Feedback/Feedback';
 
 export class App extends Component {
 
-  state = {
-        good: 0,
-        neutral: 0,
-        bad: 0
-    };
-    
-  handleOption = (option) => {
-    this.setState((prevState) => {
-      return {
-        [option]: prevState[option] +1,
-      }
-    })
+  render() {
+    return (
+      <>
+        <h1>2-nd feedback HW! 👍</h1>
+               
+        <Feedback
+          // state = {this.state}
+          // handleOption={this.handleOption}
+          
+        />   
+      </>
+    );
   };
+}
+
+// state = {
+  //       good: 0, 
+  //       neutral: 0,
+  //       bad: 0
+  //   };
+    
+  // handleOption = (option) => {
+  //   this.setState((prevState) => {
+  //     return {
+  //       [option]: prevState[option] +1,
+  //     }
+  //   })
+  // };
 
     // handleGood = event => { 
     //     //console.log("Good", event)
@@ -35,18 +50,3 @@ export class App extends Component {
     //     //console.log("Bad")
     //     this.setState({ bad: this.state.bad + 1 }); 
     // };
-
-  render() {
-    return (
-      <>
-        <h1>2-nd feedback HW! 👍</h1>
-               
-        <Feedback
-          state = {this.state}
-          handleOption={this.handleOption}
-          
-        />   
-      </>
-    );
-  };
-}
