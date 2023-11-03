@@ -28,8 +28,8 @@ export const Feedback = ({
     )
 }
 
-{/* <div> 
-            <button className="button" type="button" onClick={() => handleOption(good)}>Good</button>
-            <button className="button" type="button" onClick={() => handleOption(neutral)}>Neutral</button>
-            <button className="button" type="button" onClick={() => handleOption(bad)}>Bad</button>
-        </div> */}
+// {/* <div> 
+//             <button className="button" type="button" onClick={() => handleOption(good)}>Good</button>
+//             <button className="button" type="button" onClick={() => handleOption(neutral)}>Neutral</button>
+//             <button className="button" type="button" onClick={() => handleOption(bad)}>Bad</button>
+//         </div> */}
