@@ -13,18 +13,25 @@ export class App extends Component {
     bad: 0
   };    
 
-  handleGood = (event) => { 
+    // handleOption = (option) => {
+    //     this.setState((prevState) => {
+    //     return {
+    //         [option]: prevState[option] +1,
+    //     }
+    // })};
+
+  handleGood = () => { 
     //console.log("Good", event)
     this.setState({ good: this.state.good + 1 });
     // console.log("Good", this.state.good)     
   };
 
-  handleNeutral = (event) => { 
+  handleNeutral = () => { 
     //console.log("Neutral", event)
     this.setState({ neutral: this.state.neutral + 1 });
   };
 
-  handleBad = (event) => { 
+  handleBad = () => { 
     //console.log("Bad", event)
     this.setState({ bad: this.state.bad + 1 }); 
   };
@@ -42,7 +49,7 @@ export class App extends Component {
 
   render() {
 
-    const isFeddback = this.countTotalFeedback(this.state);
+    const isFeedback = this.countTotalFeedback(this.state);
 
     return (
       <>
@@ -54,12 +61,14 @@ export class App extends Component {
             handleNeutral={this.handleNeutral}
             handleBad={this.handleBad}
 
+
+
           // option={}
           //onLeaveFeedback={ }
         />  
         </Section>
         
-        { isFeddback === 0 ? <Section title="There is no feedback"/> : 
+        { isFeedback === 0 ? <Section title="There is no feedback"/> : 
 
         <Section title = "Statistics">  
           <Statistics
@@ -77,14 +86,3 @@ export class App extends Component {
     );
   };
 }
-
-
-  // handleOption = (option) => {
-  //   this.setState((prevState) => {
-  //     return {
-  //       [option]: prevState[option] +1,
-  //     }
-  //   })
-  // };
-
-
