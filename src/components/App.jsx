@@ -20,21 +20,21 @@ export class App extends Component {
       }
   })};
 
-  handleGood = () => { 
-    //console.log("Good", event)
-    this.setState({ good: this.state.good + 1 });
-    // console.log("Good", this.state.good)     
-  };
+  // handleGood = () => { 
+  //   //console.log("Good", event)
+  //   this.setState({ good: this.state.good + 1 });
+  //   // console.log("Good", this.state.good)     
+  // };
 
-  handleNeutral = () => { 
-    //console.log("Neutral", event)
-    this.setState({ neutral: this.state.neutral + 1 });
-  };
+  // handleNeutral = () => { 
+  //   //console.log("Neutral", event)
+  //   this.setState({ neutral: this.state.neutral + 1 });
+  // };
 
-  handleBad = () => { 
-    //console.log("Bad", event)
-    this.setState({ bad: this.state.bad + 1 }); 
-  };
+  // handleBad = () => { 
+  //   //console.log("Bad", event)
+  //   this.setState({ bad: this.state.bad + 1 }); 
+  // };
 
   countTotalFeedback = (state) => {
       let total = (state.good + state.bad + state.neutral);
@@ -57,14 +57,12 @@ export class App extends Component {
 
         <Section title="Please leave feedback"> 
             <Feedback
-            handleGood={this.handleGood}
-            handleNeutral={this.handleNeutral}
-            handleBad={this.handleBad}
+            // handleGood={this.handleGood}
+            // handleNeutral={this.handleNeutral}
+            // handleBad={this.handleBad}
 
-
-
-          // option={}
-          //onLeaveFeedback={ }
+          option={Object.keys(this.state)}
+          onLeaveFeedback={this.handleOption}
         />  
         </Section>
         
