@@ -13,12 +13,12 @@ export class App extends Component {
     bad: 0
   };    
 
-    // handleOption = (option) => {
-    //     this.setState((prevState) => {
-    //     return {
-    //         [option]: prevState[option] +1,
-    //     }
-    // })};
+  handleOption = (option) => {
+      this.setState((prevState) => {
+      return {
+          [option]: prevState[option] +1,
+      }
+  })};
 
   handleGood = () => { 
     //console.log("Good", event)
@@ -68,7 +68,8 @@ export class App extends Component {
         />  
         </Section>
         
-        { isFeedback === 0 ? <Section title="There is no feedback"/> : 
+        {isFeedback === 0 ? <Section
+          title="There is no feedback" /> : 
 
         <Section title = "Statistics">  
           <Statistics
@@ -78,7 +79,7 @@ export class App extends Component {
             bad={this.state.bad}
 
             countTotalFeedback={this.countTotalFeedback}
-            countPositiveFeedbackPercentage={this.countPositiveFeedbackPercentage}                        
+            countPositiveFeedbackPercentage={this.countPositiveFeedbackPercentage}
             />
           </Section>
         }
